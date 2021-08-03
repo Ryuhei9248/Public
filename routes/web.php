@@ -1,5 +1,6 @@
 <?php
 
+/* 第一引数にアドレス、第二引数に関数等を入れ、アドレスによって呼び出される処理を記述する */
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/**/ 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/users/{id}', 'UserController@show');
