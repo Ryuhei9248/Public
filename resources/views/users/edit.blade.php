@@ -13,7 +13,7 @@
 @endif
 </div>
 
-<form method="POST" action="http://localhost:8000/me" >
+<form method="POST" action="{{ route('users.update') }}" >
     <div class="form-group col-md-4">
     @csrf
     <label>名前</label>
