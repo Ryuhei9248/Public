@@ -12,7 +12,6 @@
           @auth
             <?php $bookmarkingUsers = $post->bookmarkingUsers?>
               @forelse($bookmarkingUsers as $bookmarkingUser)
-              {{$bookmarkingUser -> name}}
                 <!-- ユーザーがブックマークしていたら解除ボタンを表示してbreak-->
                 @if($bookmarkingUser->id === Auth::id())
                     <form method="POST" action="{{ route('bookmarks.remove', $post->id) }}">
