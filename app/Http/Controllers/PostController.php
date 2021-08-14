@@ -8,14 +8,14 @@ use App\Models\Post;
 use App\Http\Requests\User\CreateRequest;
 use App\Http\Requests\User\ReplyRequest;
 use App\Models\Reply;
-
+use App\Models\User;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts=Post::with(['user'])->orderBy('created_at', 'desc')->get();
-        
+        $posts=Post::with(['user','bookmarkingUsers'])->orderBy('created_at', 'desc')->get();
+
         return view('index',['posts' => $posts]);
     }
 
